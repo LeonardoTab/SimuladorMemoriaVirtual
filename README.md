@@ -2,16 +2,18 @@
 
 Projeto desenvolvido para a disciplina **Análise e Aplicação de Sistemas Operacionais** da **Universidade do Vale do Rio dos Sinos (UNISINOS)**.
 
+---
+
 ## Objetivo
 
-Este projeto implementa um simulador de gerenciamento de memória virtual utilizando paginação. O sistema simula o funcionamento de uma Unidade de Gerenciamento de Memória (MMU), realizando a tradução de endereços virtuais para endereços físicos, tratamento de faltas de página (*Page Fault*) e substituição de páginas utilizando o algoritmo **FIFO (First In, First Out)**.
+Este projeto implementa um simulador de gerenciamento de memória virtual utilizando paginação. O sistema simula o funcionamento de uma Unidade de Gerenciamento de Memória (MMU), realizando a tradução de endereços virtuais para endereços físicos, tratamento de Page Fault e substituição de páginas utilizando o algoritmo FIFO (First In, First Out).
 
 ---
 
 ## Especificações do Sistema
 
 | Componente | Valor |
-|------------|-------|
+|------------|------:|
 | Memória Virtual | 1 MB |
 | Memória Física | 64 KB |
 | Tamanho da Página | 8 KB |
@@ -23,13 +25,12 @@ Este projeto implementa um simulador de gerenciamento de memória virtual utiliz
 
 ## Funcionalidades Implementadas
 
-- Modelagem da memória virtual.
-- Modelagem da memória física.
-- Implementação da MMU.
+- Simulação de memória virtual e memória física.
+- Implementação da MMU (Memory Management Unit).
 - Tradução de endereços virtuais para físicos.
 - Implementação da tabela de páginas.
-- Detecção e tratamento de Page Fault.
-- Carregamento de páginas para memória principal.
+- Tratamento de Page Fault.
+- Carregamento de páginas na memória principal.
 - Substituição de páginas utilizando FIFO.
 - Simulação de dois processos leves.
 - Exibição do estado final da memória física.
@@ -39,19 +40,19 @@ Este projeto implementa um simulador de gerenciamento de memória virtual utiliz
 
 ## Estrutura do Projeto
 
-```
+```text
 .
 ├── main.cpp
-├── frame.h
 ├── frame.cpp
-├── memory.h
+├── frame.h
 ├── memory.cpp
-├── mmu.h
+├── memory.h
 ├── mmu.cpp
-├── page.h
+├── mmu.h
 ├── page.cpp
-├── process.h
+├── page.h
 ├── process.cpp
+├── process.h
 └── README.md
 ```
 
@@ -73,29 +74,30 @@ g++ *.cpp -o simulador
 
 ---
 
-## Exemplo de Funcionamento
+## Funcionamento
 
-Durante a execução o programa apresenta:
+Durante a execução o simulador apresenta:
 
 - Processo que realizou o acesso;
-- Endereço virtual;
-- Página e deslocamento (offset);
+- Endereço virtual solicitado;
+- Página e offset correspondentes;
 - Tradução realizada pela MMU;
 - Ocorrência de Page Fault;
-- Carregamento da página em um frame livre;
+- Carregamento de páginas em frames livres;
 - Substituição de páginas utilizando FIFO;
 - Estado final da memória física;
-- Estatísticas da simulação.
+- Estatísticas da execução.
 
 ---
 
 ## Conceitos Aplicados
 
+- Sistemas Operacionais
 - Gerenciamento de Memória
 - Memória Virtual
 - Memória Física
 - Paginação
-- MMU (Memory Management Unit)
+- MMU
 - Tradução de Endereços
 - Tabela de Páginas
 - Page Fault
